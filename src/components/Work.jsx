@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { DataContext } from '../contexts/DataContext'
+import DeleteButton from './DeleteButton'
 import '../styles/Work.css'
 
     /*
@@ -54,60 +55,63 @@ function Work(){
                 const key = `company${index}`
 
                 return (
-                    <div key={key} className='position'>
-                        <div className='position-info'>
-                            <div className='form-group'>
-                                <label htmlFor='position' className='form-label'>Position</label>
-                                <input 
-                                    type='text' 
-                                    className='form-control position-name' 
-                                    id='position'
-                                    name='position'
-                                    value={work.position}
-                                    onChange={(e) => handleItemChange(e, index, "position")}
-                                    placeholder='Position'
-                                />
+                    <section key={key} className='position'>
+                        <div className='position-entry'>
+                            <div className='position-info'>
+                                <div className='form-group'>
+                                    <label htmlFor='position' className='form-label'>Position</label>
+                                    <input 
+                                        type='text' 
+                                        className='form-control position-name' 
+                                        id='position'
+                                        name='position'
+                                        value={work.position}
+                                        onChange={(e) => handleItemChange(e, index, "position")}
+                                        placeholder='Position'
+                                    />
+                                </div>
+                                <div className='form-group'>
+                                    <label htmlFor='occupation' className='form-label'>Company Name</label>
+                                    <input 
+                                        type='text'
+                                        className='form-control company-name'
+                                        id='name'
+                                        name='name'
+                                        value={work.name}
+                                        onChange={(e) => handleItemChange(e, index, "name")}
+                                        placeholder='Company Name'
+                                    />
+                                </div>
                             </div>
-                            <div className='form-group'>
-                                <label htmlFor='occupation' className='form-label'>Company Name</label>
-                                <input 
-                                    type='text'
-                                    className='form-control company-name'
-                                    id='name'
-                                    name='name'
-                                    value={work.name}
-                                    onChange={(e) => handleItemChange(e, index, "name")}
-                                    placeholder='Company Name'
-                                />
+                            <div className='position-info'>
+                                <div className='form-group'>
+                                    <label htmlFor='position' className='form-label'>Start Year</label>
+                                    <input 
+                                        type='text' 
+                                        className='form-control start' 
+                                        id='start'
+                                        name='start'
+                                        value={work.start}
+                                        onChange={(e) => handleItemChange(e, index, "start")}
+                                        placeholder='Start Year'
+                                    />
+                                </div>
+                                <div className='form-group'>
+                                    <label htmlFor='occupation' className='form-label'>End Year</label>
+                                    <input 
+                                        type='text'
+                                        className='form-control end'
+                                        id='end'
+                                        name='end'
+                                        value={work.end}
+                                        onChange={(e) => handleItemChange(e, index, "end")}
+                                        placeholder='End Year'
+                                    />
+                                </div>
                             </div>
                         </div>
-                       <div className='position-info'>
-                        <div className='form-group'>
-                                <label htmlFor='position' className='form-label'>Start Year</label>
-                                <input 
-                                    type='text' 
-                                    className='form-control start' 
-                                    id='start'
-                                    name='start'
-                                    value={work.start}
-                                    onChange={(e) => handleItemChange(e, index, "start")}
-                                    placeholder='Start Year'
-                                />
-                            </div>
-                            <div className='form-group'>
-                                <label htmlFor='occupation' className='form-label'>End Year</label>
-                                <input 
-                                    type='text'
-                                    className='form-control end'
-                                    id='end'
-                                    name='end'
-                                    value={work.end}
-                                    onChange={(e) => handleItemChange(e, index, "end")}
-                                    placeholder='End Year'
-                                />
-                            </div>
-                       </div>  
-                    </div>
+                        <DeleteButton onClick={() => removeEntry(index)} />
+                    </section>
                 )
             })}
            

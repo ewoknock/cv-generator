@@ -1,0 +1,7 @@
+.delete-btn{
+    align-self: flex-end;
+    width: var(--font-size-xxxl);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: var(--space-xxxxs);
+}

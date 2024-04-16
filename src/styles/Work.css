@@ -1,4 +1,10 @@
 .position{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.position-entry{
     flex-grow: 1;
     display: flex;
     margin-bottom: var(--space-l);
