@@ -1,3 +1,7 @@
+.general{
+    flex-direction: row;
+}
+
 .general-info{
     display: flex;
     flex-direction: column;

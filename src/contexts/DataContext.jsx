@@ -11,7 +11,7 @@ function DataProvider({ children }){
             phone: "555-555-5555",
             website: "https://placekitten.com/",
         },
-        workHistory: [{name:'Google', position: 'Software Developer I'}],
+        workHistory: [],
         education: [],
     })
 

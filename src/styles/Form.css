@@ -10,6 +10,7 @@ fieldset{
 
 legend{
     text-align: left;
+    margin-bottom: var(--space-s);
 }
 
 .form-group{
@@ -23,7 +24,6 @@ legend{
     text-align: left;
     font-size: var(--font-size-s);
     color: var(--color-grey);
-    padding-top: var(--space-s);
 }
 
 .form-control{
@@ -32,4 +32,5 @@ legend{
     font-size: var(--font-size-m);
     padding: var(--space-xs) 0;
     border-bottom: 1px solid var(--color-grey);
+    margin-bottom: var(--space-m);
   }

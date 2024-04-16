@@ -1,16 +1,16 @@
-.position{
+.education{
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
-.position-entry{
+.education-entry{
     flex-grow: 1;
     display: flex;
     gap: var(--space-l);
 }
 
-.position-info{
+.education-info{
     display: flex;
     flex-direction: column;
     align-self: flex-start;
