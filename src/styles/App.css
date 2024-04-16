@@ -1,11 +1,13 @@
 main{
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
 }
 
 fieldset{
-  display: grid;
-  justify-content: center;
-  align-items: center;
+  display: flex;
   margin-bottom: var(--space-l);
+  gap: var(--space-l);
+  border: none;
+  margin: var(--space-l) 0;
+  font-size: var(--font-size-xl);
 }

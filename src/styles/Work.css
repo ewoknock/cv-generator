@@ -1,11 +1,15 @@
-.work{
-    justify-content: left;
+.position{
+    flex-grow: 1;
+    display: flex;
+    margin-bottom: var(--space-l);
+    gap: var(--space-l);
 }
 
-.work-header{
+.position-info{
     display: flex;
-    align-items: center;
-    gap: var(--space-xs);
+    flex-direction: column;
+    align-self: flex-start;
+    width: 100%;
 }
 
 .work-add-button{

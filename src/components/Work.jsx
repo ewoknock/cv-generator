@@ -1,8 +1,7 @@
-import React from "react";
+import { useContext } from 'react'
+import { DataContext } from '../contexts/DataContext'
 import '../styles/Work.css'
 
-function newWorkEntry(props){
-console.log(props)
     /*
         <div className='work-entry'>
             <div className='work-info'>
@@ -15,33 +14,104 @@ console.log(props)
             </div>
         </div>
     */
-   const workSection = document.querySelector('.work');
-   let timeStamp = props.timeStamp
-   
-   let workEntry = document.createElement('div')
-   workEntry.classList.add('work-entry')
-   workEntry.id = timeStamp
-
-   let workInfo = document.createElement('div')
-   workInfo.classList.add('work-info')
-
-   let workDetails = document.createElement('div')
-   workDetails.classList.add('work-details')
-
-   workEntry.appendChild(workInfo)
-   workEntry.appendChild(workDetails)
-   workSection.appendChild(workEntry)
-
-}
 
 function Work(){
+
+    const {
+        data: { workHistory },
+        handleFieldsetChange,
+    } = useContext(DataContext)
+
+    const addEntry = () => {
+        handleFieldsetChange("workHistory", [
+            ...workHistory,
+            { name: "", position: "" , start: "", end: "", responsibilities: "" },
+        ])
+    }
+
+    const removeEntry = (index) => {
+        handleFieldsetChange("workHistory", [
+            ...workHistory.slice(0, index),
+            ...workHistory.slice(index +1 )
+        ])
+    }
+
+    const handleItemChange = (e, index, name) => {
+        const editedItem = { ...workHistory[index], [name]: e.target.value }
+        const newWorkHistory = [
+            ...workHistory.slice(0, index),
+            editedItem,
+            ...workHistory.slice(index + 1)
+        ]
+        handleFieldsetChange("workHistory", [...newWorkHistory])
+    }
+
     return (
-        <section className='work'>
-            <div className='work-header'>
-                <h2>Work Experience</h2>
-                <button onClick={newWorkEntry} className='work-add-button'>+</button>
-            </div>
-        </section>
+        <fieldset className='work'>
+            <legend>Work Experience</legend>
+
+            {workHistory.map((work, index) => {
+                const key = `company${index}`
+
+                return (
+                    <div key={key} className='position'>
+                        <div className='position-info'>
+                            <div className='form-group'>
+                                <label htmlFor='position' className='form-label'>Position</label>
+                                <input 
+                                    type='text' 
+                                    className='form-control position-name' 
+                                    id='position'
+                                    name='position'
+                                    value={work.position}
+                                    onChange={(e) => handleItemChange(e, index, "position")}
+                                    placeholder='Position'
+                                />
+                            </div>
+                            <div className='form-group'>
+                                <label htmlFor='occupation' className='form-label'>Company Name</label>
+                                <input 
+                                    type='text'
+                                    className='form-control company-name'
+                                    id='name'
+                                    name='name'
+                                    value={work.name}
+                                    onChange={(e) => handleItemChange(e, index, "name")}
+                                    placeholder='Company Name'
+                                />
+                            </div>
+                        </div>
+                       <div className='position-info'>
+                        <div className='form-group'>
+                                <label htmlFor='position' className='form-label'>Start Year</label>
+                                <input 
+                                    type='text' 
+                                    className='form-control start' 
+                                    id='start'
+                                    name='start'
+                                    value={work.start}
+                                    onChange={(e) => handleItemChange(e, index, "start")}
+                                    placeholder='Start Year'
+                                />
+                            </div>
+                            <div className='form-group'>
+                                <label htmlFor='occupation' className='form-label'>End Year</label>
+                                <input 
+                                    type='text'
+                                    className='form-control end'
+                                    id='end'
+                                    name='end'
+                                    value={work.end}
+                                    onChange={(e) => handleItemChange(e, index, "end")}
+                                    placeholder='End Year'
+                                />
+                            </div>
+                       </div>  
+                    </div>
+                )
+            })}
+           
+        </fieldset>
     )
 }
 

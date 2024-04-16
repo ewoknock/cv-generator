@@ -1,9 +1,6 @@
-.general{
-    grid-template-columns: auto auto;
-}
-
 .general-info{
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    align-self: flex-start;
+    width: 100%;
 }
