@@ -13,6 +13,26 @@ legend{
     margin-bottom: var(--space-s);
 }
 
+.form{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: var(--space-s);
+}
+
+.form-entry{
+    flex-grow: 1;
+    display: flex;
+    gap: var(--space-l);
+}
+
+.form-info{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    width: 100%;
+}
+
 .form-group{
     display: flex;
     flex-direction: column;

@@ -2,20 +2,7 @@ import { useContext } from 'react'
 import { DataContext } from '../contexts/DataContext'
 import DeleteButton from './DeleteButton'
 import AddEntryButton from './AddEntryButton'
-import '../styles/Education.css'
-
-    /*
-        <div className='work-entry'>
-            <div className='work-info'>
-                <input className='form-control title' type='text' placeholder='Job Title' />
-                <input className='form-control company-name' type='text' placeholder='Company Name' />
-                <input className='form-control duration' type='text' placeholder='Year - Year' />
-            </div>
-            <div className='work-details'>
-                <input className='form-control responsibilities' type='text-area' placeholder='Job Responsibilities' />
-            </div>
-        </div>
-    */
+import '../styles/Form.css'
 
 function Education(){
 
@@ -49,16 +36,16 @@ function Education(){
     }
 
     return (
-        <fieldset className='education'>
+        <fieldset className='education-section'>
             <legend>Education</legend>
 
             {education.map((work, index) => {
                 const key = `education${index}`
 
                 return (
-                    <section key={key} className='education'>
-                        <div className='education-entry'>
-                            <div className='education-info'>
+                    <section key={key} className='form'>
+                        <div className='form-entry'>
+                            <div className='form-info'>
                                 <div className='form-group'>
                                     <label htmlFor='degree' className='form-label'>Degree</label>
                                     <input 
@@ -84,7 +71,7 @@ function Education(){
                                     />
                                 </div>
                             </div>
-                            <div className='education-info'>
+                            <div className='form-info'>
                                 <div className='form-group'>
                                     <label htmlFor='start' className='form-label'>Start Year</label>
                                     <input 
