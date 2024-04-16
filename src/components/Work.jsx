@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { DataContext } from '../contexts/DataContext'
 import DeleteButton from './DeleteButton'
+import AddEntryButton from './AddEntryButton'
 import '../styles/Work.css'
 
     /*
@@ -71,7 +72,7 @@ function Work(){
                                     />
                                 </div>
                                 <div className='form-group'>
-                                    <label htmlFor='occupation' className='form-label'>Company Name</label>
+                                    <label htmlFor='name' className='form-label'>Company Name</label>
                                     <input 
                                         type='text'
                                         className='form-control company-name'
@@ -85,7 +86,7 @@ function Work(){
                             </div>
                             <div className='position-info'>
                                 <div className='form-group'>
-                                    <label htmlFor='position' className='form-label'>Start Year</label>
+                                    <label htmlFor='start' className='form-label'>Start Year</label>
                                     <input 
                                         type='text' 
                                         className='form-control start' 
@@ -97,7 +98,7 @@ function Work(){
                                     />
                                 </div>
                                 <div className='form-group'>
-                                    <label htmlFor='occupation' className='form-label'>End Year</label>
+                                    <label htmlFor='end' className='form-label'>End Year</label>
                                     <input 
                                         type='text'
                                         className='form-control end'
@@ -110,11 +111,26 @@ function Work(){
                                 </div>
                             </div>
                         </div>
+                        <div className='position-info'>
+                            <div className='form-group'>
+                                <label htmlFor='responsibilities' className='form-label'>Responsibilities</label>
+                                <textarea 
+                                    type='textarea'
+                                    className='form-control responsibilities'
+                                    id='responsibilities'
+                                    name='responsibilities'
+                                    value={work.responsibilities}
+                                    onChange={(e) => handleItemChange(e, index, "responsibilities")}
+                                    placeholder='Responsibilities'
+                                    rows='4'
+                                />
+                            </div>
+                        </div>
                         <DeleteButton onClick={() => removeEntry(index)} />
                     </section>
                 )
             })}
-           
+            <AddEntryButton onClick={() => addEntry()} />
         </fieldset>
     )
 }

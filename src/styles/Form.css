@@ -1,11 +1,12 @@
 fieldset{
     display: flex;
+    flex-direction: column;
     margin-bottom: var(--space-l);
     gap: var(--space-l);
     border: none;
     margin: var(--space-l) 0;
     font-size: var(--font-size-xl);
-  }
+}
 
 legend{
     text-align: left;

@@ -4,4 +4,5 @@
     background-color: var(--color-white);
     border-radius: var(--border-radius);
     padding: var(--space-xxxxs);
+    margin-top: var(--space-m);
 }
