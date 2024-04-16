@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import General from './components/General.jsx'
+import { DataProvider } from '../contexts/DataContext'
+import Form from './Form'
 import '../styles/App.css'
 
 function App() {
@@ -7,9 +8,9 @@ function App() {
 
   return (
     <>
-      <div className='main'>
-        <General />
-      </div>
+      <DataProvider>
+        <Form />
+      </DataProvider>
     </>
   )
 }

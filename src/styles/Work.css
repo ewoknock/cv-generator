@@ -1,0 +1,18 @@
+.work{
+    justify-content: left;
+}
+
+.work-header{
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.work-add-button{
+    border: none;
+    background-color: var(--color-white);
+}
+
+.work-add-button:hover{
+    cursor: pointer;
+}

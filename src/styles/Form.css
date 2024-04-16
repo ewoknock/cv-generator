@@ -1,0 +1,13 @@
+.form-control{
+    border: none;
+    background-color: var(--color-white);
+    padding: var(--space-xxs);
+  }
+  
+  .full-name{
+    font-size: var(--font-size-xxxl);
+  }
+  
+  .occupation{
+    font-size: var(--font-size-xxl);
+  }
