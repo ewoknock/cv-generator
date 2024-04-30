@@ -1,18 +1,20 @@
 import { useState } from 'react'
+import { Outlet } from 'react-router-dom'
 import { DataProvider } from '../contexts/DataContext'
-import Form from './Form'
-import '../styles/App.css'
+import Header from '../components/Header.jsx'
+import '../styles/Root.css'
 
-function App() {
+function Root() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <Header />
       <DataProvider>
-        <Form />
+        <Outlet />
       </DataProvider>
     </>
   )
 }
 
-export default App
+export default Root
