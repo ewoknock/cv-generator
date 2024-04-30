@@ -35,7 +35,7 @@ function View(){
                 {education.map((entry, index) => {
                     return (<div key={`education${index}`} className="education-entry">
                         <p><strong>{entry.degree}</strong>, {entry.name}</p>
-                        <p>{entry.start}-{entry.end}</p>
+                        <p><strong>{entry.start}-{entry.end}</strong></p>
                     </div>)
                 })}
             </section>

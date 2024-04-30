@@ -13,19 +13,19 @@ function DataProvider({ children }){
         },
         workHistory: [
             {
-                name: "Matrix",
+                name: "Google",
                 position: "Software Developer",
                 start: "2020",
-                end: "2050",
+                end: "",
                 responsibilities: "N/A",
             }
         ],
         education: [
             {
-                name: "Zion University",
-                degree: "Computer Science",
-                start: "2016",
-                end: "2020"
+                name: "UCI",
+                degree: "B.S. in Computer Science",
+                start: "2010",
+                end: "2013"
             }
         ],
     })
