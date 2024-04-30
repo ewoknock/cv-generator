@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { DataContext } from '../contexts/DataContext'
+import "../styles/View.css"
 
 function View(){
     const { data: { generalInfo, workHistory, education }} = useContext(DataContext)
@@ -17,23 +18,24 @@ function View(){
                 </div>
             </section>
             <section className="workHistory">
+                <h2 className="workHistory-header">Work Experience</h2>
                 {workHistory.map((entry, index) => {
-                    return (<div key={`company${index}`}>
-                        <p>{entry.name}</p>
-                        <p>{entry.position}</p>
-                        <p>{entry.start}</p>
-                        <p>{entry.end}</p>
-                        <p>{entry.responsibilities}</p>
+                    return (<div key={`company${index}`} className="workHistory-entry">
+                        <div className="company-info">
+                            <p>{entry.name}</p>
+                            <p>{entry.position}</p>
+                            <p>{entry.start}-{entry.end}</p>
+                        </div>
+                        <p className="company-responsibilities">{entry.responsibilities}</p>
                     </div>)
                 })}
             </section>
             <section className="education">
+                <h2 className="education-header">Education</h2>
                 {education.map((entry, index) => {
-                    return (<div key={`education${index}`}>
-                        <p>{entry.name}</p>
-                        <p>{entry.degree}</p>
-                        <p>{entry.start}</p>
-                        <p>{entry.end}</p>
+                    return (<div key={`education${index}`} className="education-entry">
+                        <p><strong>{entry.degree}</strong>, {entry.name}</p>
+                        <p>{entry.start}-{entry.end}</p>
                     </div>)
                 })}
             </section>
