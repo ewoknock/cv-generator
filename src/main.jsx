@@ -6,7 +6,8 @@ import {
 } from 'react-router-dom'
 import Root from './routes/Root.jsx'
 import ErrorPage from './components/ErrorPage.jsx'
-import Form from './components/Form.jsx'
+import Form from './routes/Form.jsx'
+import View from './routes/View.jsx'
 import './index.css'
 
 const router = createBrowserRouter([
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
-      //{ index: true, element: <View /> },
+      { index: true, element: <View /> },
       {
         path: "form",
         element: <Form />,
