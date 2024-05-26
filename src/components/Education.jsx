@@ -39,7 +39,7 @@ function Education(){
         <fieldset className='education-section'>
             <legend>Education</legend>
 
-            {education.map((work, index) => {
+            {education.map((edu, index) => {
                 const key = `education${index}`
 
                 return (
@@ -53,7 +53,7 @@ function Education(){
                                         className='form-control degree' 
                                         id='degree'
                                         name='degree'
-                                        value={education.degree}
+                                        value={edu.degree}
                                         onChange={(e) => handleItemChange(e, index, "degree")}
                                         placeholder='Degree'
                                     />
@@ -65,7 +65,7 @@ function Education(){
                                         className='form-control school-name'
                                         id='name'
                                         name='name'
-                                        value={education.name}
+                                        value={edu.name}
                                         onChange={(e) => handleItemChange(e, index, "name")}
                                         placeholder='School Name'
                                     />
@@ -79,7 +79,7 @@ function Education(){
                                         className='form-control start' 
                                         id='start'
                                         name='start'
-                                        value={work.start}
+                                        value={edu.start}
                                         onChange={(e) => handleItemChange(e, index, "start")}
                                         placeholder='Start Year'
                                     />
@@ -91,7 +91,7 @@ function Education(){
                                         className='form-control end'
                                         id='end'
                                         name='end'
-                                        value={work.end}
+                                        value={edu.end}
                                         onChange={(e) => handleItemChange(e, index, "end")}
                                         placeholder='End Year'
                                     />
