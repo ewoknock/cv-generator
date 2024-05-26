@@ -1,0 +1,20 @@
+main{
+  width: 60%;
+  margin: 0 auto;
+}
+
+@media print {
+  header, footer {
+      display: none;
+  }
+
+  body {
+      padding: 1rem;
+  }
+
+  #root {
+      height: auto;
+  }
+}
+
+@page { size: auto;  margin: 0mm; }
